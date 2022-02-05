@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "26bea6a7-4775-4966-9c64-7f6cc6a575b1": {
+      "ProjectGuid": "26bea6a7-4775-4966-9c64-7f6cc6a575b1",
+      "DisplayName": "WpfApp2",
+      "ColorIndex": 0
+    },
+    "13624b37-e275-4ead-ba7b-83fca1a7ed27": {
+      "ProjectGuid": "13624b37-e275-4ead-ba7b-83fca1a7ed27",
+      "DisplayName": "CalculatorWPFLibrery",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
