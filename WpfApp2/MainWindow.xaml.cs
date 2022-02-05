@@ -16,7 +16,7 @@ using CalculatorWPFLibrery;
 
 namespace WpfApp2
 {
-    
+    // Изменение для гита
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
