@@ -43,12 +43,12 @@ namespace WpfApp2
 
         private void Operations_Click(object sender, RoutedEventArgs e)
         {
+            Button? operation = sender as Button;
+            Perems.Operation = operation.Content.ToString();
             if (Perems.Number1 != null)
             {
                 string str = TextResult.Text;
                 string EnterResult = ClassResult.MethodResultAndOper(str);
-                Button? operation = sender as Button;
-                Perems.Operation = operation.Content.ToString();
                 TextOperation.Text = $"{EnterResult} {Perems.Operation}";
                 Perems.Number1 = EnterResult;
                 TextResult.Clear();
@@ -56,8 +56,6 @@ namespace WpfApp2
             //// Первая операция
             else if (Perems.Number1==null) 
             {
-                Button? operation = sender as Button;
-                Perems.Operation = operation.Content.ToString();
                 Perems.Number1 = TextResult.Text;
                 TextResult.Clear();
                 TextOperation.Text = $"{Perems.Number1} {Perems.Operation}";
