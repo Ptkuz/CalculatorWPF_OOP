@@ -66,7 +66,7 @@
         <Button Style="{StaticResource Operations}" x:Name="Procent" Content="%" HorizontalAlignment="Left" Margin="4,103,0,0" VerticalAlignment="Top" Width="50" Height="50                  " RenderTransformOrigin="-0.218,0.452"/>
         <Button Style="{StaticResource Operations}" x:Name="CE" Content="CE" HorizontalAlignment="Left" Margin="58,103,0,0" VerticalAlignment="Top" Width="50" Height="50                  " RenderTransformOrigin="-0.218,0.452"/>
         <Button Style="{StaticResource Operations}" x:Name="NumberProcent_Copy5" HorizontalAlignment="Left" Margin="114,103,0,0" VerticalAlignment="Top" Width="50" Height="50                  " RenderTransformOrigin="-0.218,0.452">
-            <Button Style="{StaticResource Operations}" x:Name="C" Content="C" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50                  " RenderTransformOrigin="-0.218,0.452"/>
+            <Button Style="{StaticResource Operations}" x:Name="C" Content="C" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50                  " RenderTransformOrigin="-0.218,0.452" Click="C_Click"/>
         </Button>
         <Button Style="{StaticResource Operations}" x:Name="Devide" Content="/" HorizontalAlignment="Left" Margin="168,158,0,0" VerticalAlignment="Top" Width="50" Height="50                  " Click="Operations_Click"/>
         <Button Style="{StaticResource Operations}" x:Name="Multiply" Content="*" HorizontalAlignment="Left" Margin="168,213,0,0" VerticalAlignment="Top" Width="50" Height="50                  " Click="Operations_Click"/>

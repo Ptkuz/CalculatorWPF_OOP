@@ -43,22 +43,27 @@ namespace WpfApp2
 
         private void Operations_Click(object sender, RoutedEventArgs e)
         {
-            Button? operation = sender as Button;
-            Perems.Operation = operation.Content.ToString();
             if (Perems.Number1 != null)
             {
+                Perems.FlagOper = true;
                 string str = TextResult.Text;
                 string EnterResult = ClassResult.MethodResultAndOper(str);
-                TextOperation.Text = $"{EnterResult} {Perems.Operation}";
+                Button? operation = sender as Button;
+                Perems.Operation = operation.Content.ToString();
                 Perems.Number1 = EnterResult;
+                TextOperation.Text = ChoiseOperation.ChoiseMethod();
                 TextResult.Clear();
             }
             //// Первая операция
             else if (Perems.Number1==null) 
             {
+                Perems.FlagOper = true;
+                Button? operation = sender as Button;
+                Perems.Operation = operation.Content.ToString();
                 Perems.Number1 = TextResult.Text;
+                TextOperation.Text = ChoiseOperation.ChoiseMethod();
                 TextResult.Clear();
-                TextOperation.Text = $"{Perems.Number1} {Perems.Operation}";
+                
             }
             //// Первая операция
         
@@ -66,13 +71,20 @@ namespace WpfApp2
 
         private void Result_Click(object sender, RoutedEventArgs e)
         {
-            //// Результат первой операции
             string str = TextResult.Text;
             string EnterResult = ClassResult.MethodResultAndOper(str);
             TextResult.Text = EnterResult;
-            TextOperation.Text = $"{Perems.Number1} {Perems.Operation} {Perems.Number2}";
+            Perems.FlagOper = false;
+            TextOperation.Text = ChoiseOperation.ChoiseMethod();
             Perems.DropPerem();
-            //// Результат первой операции
+        }
+
+        private void C_Click(object sender, RoutedEventArgs e)
+        {
+            TextResult.Clear();
+            TextOperation.Clear();
+            TextResult.Text = "0";
+            Perems.DropPerem();
         }
     }
 }
