@@ -35,27 +35,59 @@ namespace WpfApp2
             Button? number = sender as Button;
             string? ButtonText = number.Content.ToString();
             string TextBoxStr = TextResult.Text;
-            NumbersEnter numbersEnter = new NumbersEnter();
-            string OperationOne = numbersEnter.Method(TextBoxStr, ButtonText);
+            string OperationOne = NumbersEnter.Method(TextBoxStr, ButtonText);
             TextResult.Text = OperationOne;
             //// Ввод первого числа
         }
 
+        public void ComplexOperation( object sender) 
+        {
+            Perems.PrevNumber1 = Perems.Number1;
+            Perems.FlagOper = true;
+            string str = TextResult.Text;
+            Perems.PrevOperationComp = Perems.Operation;
+            string EnterResult = ClassResult.MethodResult(str);
+            Perems.Number1 = EnterResult;
+            Button? operation = sender as Button;
+            Perems.Operation = operation.Content.ToString();
+            TextOperation.Text = ChoiseOperation.ChoiseMethod();
+            Perems.DropPerem();
+            Perems.Number1 = EnterResult;
+            Perems.Operation = operation.Content.ToString();
+            
+
+        }
+
         private void Operations_Click(object sender, RoutedEventArgs e)
         {
-            if (Perems.Number1 != null)
+            if (Perems.Number1 != null && Perems.Number2 != null && Perems.FlagOperComp) 
+            {
+                ComplexOperation(sender);
+                TextResult.Clear();
+
+            }
+            else if (Perems.Number1 != null)
             {
                 Perems.FlagOper = true;
                 string str = TextResult.Text;
-                string EnterResult = ClassResult.MethodResultAndOper(str);
+                string EnterResult = ClassResult.MethodResult(str);
+                Perems.PrevOperation = Perems.Operation;
                 Button? operation = sender as Button;
                 Perems.Operation = operation.Content.ToString();
-                Perems.Number1 = EnterResult;
+                if (ButtonNames.EqualsOperations() && Perems.Number1 != null)
+                {
+                    Perems.Number2 = TextResult.Text;
+                    Perems.FlagOperComp = true;
+                }
+                else
+                {
+                    Perems.Number1 = EnterResult;
+                }
                 TextOperation.Text = ChoiseOperation.ChoiseMethod();
                 TextResult.Clear();
             }
             //// Первая операция
-            else if (Perems.Number1==null) 
+            else if (Perems.Number1 == null)
             {
                 Perems.FlagOper = true;
                 Button? operation = sender as Button;
@@ -63,7 +95,7 @@ namespace WpfApp2
                 Perems.Number1 = TextResult.Text;
                 TextOperation.Text = ChoiseOperation.ChoiseMethod();
                 TextResult.Clear();
-                
+
             }
             //// Первая операция
         
@@ -71,11 +103,20 @@ namespace WpfApp2
 
         private void Result_Click(object sender, RoutedEventArgs e)
         {
-            string str = TextResult.Text;
-            string EnterResult = ClassResult.MethodResultAndOper(str);
-            TextResult.Text = EnterResult;
-            Perems.FlagOper = false;
-            TextOperation.Text = ChoiseOperation.ChoiseMethod();
+            if (Perems.Number1 != null && Perems.Number2 != null && Perems.FlagOperComp)
+            {
+                ComplexOperation(sender);
+                TextResult.Text = Perems.Number1;
+
+            }
+            else
+            {
+                string str = TextResult.Text;
+                string EnterResult = ClassResult.MethodResult(str);
+                TextResult.Text = EnterResult;
+                Perems.FlagOper = false;
+                TextOperation.Text = ChoiseOperation.ChoiseMethod();
+            }
             Perems.DropPerem();
         }
 

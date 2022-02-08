@@ -1,31 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CalculatorWPFLibrery
+﻿namespace CalculatorWPFLibrery
 {
-    public class ClassResult
+    public static class ClassResult
     {
-        SimpleOperation simpleOperation = new SimpleOperation();
-        public string MethodResult(string TextResultStr) 
+        public static string MethodResult(string TextResultStr)
         {
+            if (Perems.FlagOperComp)
+                Perems.Radical = TextResultStr;
+            else
                 Perems.Number2 = TextResultStr;
-                simpleOperation.Oper();
-                TextResultStr = Convert.ToString(Perems.Result);
-                return TextResultStr;
+            SimpleOperation.Oper();
+            TextResultStr = Convert.ToString(Perems.Result);
+            return TextResultStr;
         }
-
-        public static string MethodResultAndOper(string TextR)
-        {
-            string TextResultStr = TextR;
-            string EnterResult;
-            ClassResult classResult = new ClassResult();
-            EnterResult = classResult.MethodResult(TextResultStr);
-            return EnterResult;
-
-        }
-
     }
 }

@@ -10,3 +10,15 @@ C:\Users\evtku\source\repos\WpfApp2\CalculatorWPFLibrery\obj\Debug\net6.0\Calcul
 C:\Users\evtku\source\repos\WpfApp2\CalculatorWPFLibrery\obj\Debug\net6.0\CalculatorWPFLibrery.dll
 C:\Users\evtku\source\repos\WpfApp2\CalculatorWPFLibrery\obj\Debug\net6.0\ref\CalculatorWPFLibrery.dll
 C:\Users\evtku\source\repos\WpfApp2\CalculatorWPFLibrery\obj\Debug\net6.0\CalculatorWPFLibrery.pdb
+C:\Users\ptkuz\source\repos\CalculatorWPF_OOP\CalculatorWPF_OOP\CalculatorWPFLibrery\bin\Debug\net6.0\CalculatorWPFLibrery.deps.json
+C:\Users\ptkuz\source\repos\CalculatorWPF_OOP\CalculatorWPF_OOP\CalculatorWPFLibrery\bin\Debug\net6.0\CalculatorWPFLibrery.dll
+C:\Users\ptkuz\source\repos\CalculatorWPF_OOP\CalculatorWPF_OOP\CalculatorWPFLibrery\bin\Debug\net6.0\ref\CalculatorWPFLibrery.dll
+C:\Users\ptkuz\source\repos\CalculatorWPF_OOP\CalculatorWPF_OOP\CalculatorWPFLibrery\bin\Debug\net6.0\CalculatorWPFLibrery.pdb
+C:\Users\ptkuz\source\repos\CalculatorWPF_OOP\CalculatorWPF_OOP\CalculatorWPFLibrery\obj\Debug\net6.0\CalculatorWPFLibrery.csproj.AssemblyReference.cache
+C:\Users\ptkuz\source\repos\CalculatorWPF_OOP\CalculatorWPF_OOP\CalculatorWPFLibrery\obj\Debug\net6.0\CalculatorWPFLibrery.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ptkuz\source\repos\CalculatorWPF_OOP\CalculatorWPF_OOP\CalculatorWPFLibrery\obj\Debug\net6.0\CalculatorWPFLibrery.AssemblyInfoInputs.cache
+C:\Users\ptkuz\source\repos\CalculatorWPF_OOP\CalculatorWPF_OOP\CalculatorWPFLibrery\obj\Debug\net6.0\CalculatorWPFLibrery.AssemblyInfo.cs
+C:\Users\ptkuz\source\repos\CalculatorWPF_OOP\CalculatorWPF_OOP\CalculatorWPFLibrery\obj\Debug\net6.0\CalculatorWPFLibrery.csproj.CoreCompileInputs.cache
+C:\Users\ptkuz\source\repos\CalculatorWPF_OOP\CalculatorWPF_OOP\CalculatorWPFLibrery\obj\Debug\net6.0\CalculatorWPFLibrery.dll
+C:\Users\ptkuz\source\repos\CalculatorWPF_OOP\CalculatorWPF_OOP\CalculatorWPFLibrery\obj\Debug\net6.0\ref\CalculatorWPFLibrery.dll
+C:\Users\ptkuz\source\repos\CalculatorWPF_OOP\CalculatorWPF_OOP\CalculatorWPFLibrery\obj\Debug\net6.0\CalculatorWPFLibrery.pdb

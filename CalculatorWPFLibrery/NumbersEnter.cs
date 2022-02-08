@@ -1,8 +1,8 @@
 ﻿namespace CalculatorWPFLibrery
 {
-    public class NumbersEnter
+    public static class NumbersEnter
     {
-        public string Method(string result, string buttonText)
+        public static string Method(string result, string buttonText)
         {
             if (Perems.FlagOper) 
             {

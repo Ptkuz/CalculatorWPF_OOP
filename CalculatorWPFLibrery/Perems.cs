@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CalculatorWPFLibrery
+﻿namespace CalculatorWPFLibrery
 {
     public static class Perems
     {
         public static string? Operation { get; set; }
+        public static string? PrevOperation { get; set; }
+        public static string? PrevOperationComp { get; set; }
         public static string? Number1 { get; set; }
+        public static string? PrevNumber1 { get; set; }
         public static string? Number2 { get; set; }
         public static string? Radical { get; set; }
         public static string? Degree { get; set; }
@@ -21,14 +18,17 @@ namespace CalculatorWPFLibrery
         public static double Result { get; set; }
 
         public static bool FlagOper { get; set; } = false;
-        public static bool FlagDegree { get; set; } = false;
+        public static bool FlagOperComp { get; set; } = false;
         public static bool FlagRadical { get; set; } = false;
 
 
-        public static void DropPerem() 
+        public static void DropPerem()
         {
             Operation = null;
+            PrevOperation = null;
+            PrevOperationComp = null;
             Number1 = null;
+            PrevNumber1 = null;
             Number2 = null;
             Radical = null;
             Degree = null;
@@ -39,12 +39,12 @@ namespace CalculatorWPFLibrery
             DegreeDouble = 0;
             Result = 0;
 
-            FlagOper = false;
-            FlagDegree = false;
+                FlagOper = false;
+            FlagOperComp = false;
             FlagRadical = false;
-        }
+    }
 
-        
+
     }
 
 

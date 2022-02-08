@@ -6,31 +6,64 @@ using System.Threading.Tasks;
 
 namespace CalculatorWPFLibrery
 {
-    public class SimpleOperation : IOperations
+    public static class SimpleOperation
     {
-        public double Oper() 
+        public static double Oper() 
         {
             Perems.Number1Double = Convert.ToDouble(Perems.Number1);
             Perems.Number2Double = Convert.ToDouble(Perems.Number2);
+            Perems.RadicalDouble = Convert.ToDouble(Perems.Radical);
 
-            switch (Perems.Operation) 
+            if (Perems.PrevOperation != null && Perems.FlagOperComp)
             {
-                case "+":
-                    Perems.Result = Perems.Number1Double + Perems.Number2Double;
-                    break;
-                case "-":
-                    Perems.Result = Perems.Number1Double - Perems.Number2Double;
-                    break;
-                case "*":
-                    Perems.Result = Perems.Number1Double * Perems.Number2Double;
-                    break;
-                case "/":
-                    Perems.Result = Perems.Number1Double / Perems.Number2Double;
-                    break;
+                switch (Perems.PrevOperation)
+                {
+                    case "+":
+                        if (Perems.PrevOperationComp == ButtonNames.ButtonSqrt)
+                            Perems.Result = Perems.Number1Double + (Math.Pow(Perems.Number2Double, 1 / Perems.RadicalDouble));
+                        break;
+                    case "-":
+                        if (Perems.PrevOperationComp == ButtonNames.ButtonSqrt)
+                            Perems.Result = Perems.Number1Double - (Math.Pow(Perems.Number2Double, 1 / Perems.RadicalDouble));
+                        break;
+                    case "*":
+                        if (Perems.PrevOperationComp == ButtonNames.ButtonSqrt)
+                            Perems.Result = Perems.Number1Double * (Math.Pow(Perems.Number2Double, 1 / Perems.RadicalDouble));
+                        break;
+                    case "/":
+                        if (Perems.PrevOperationComp == ButtonNames.ButtonSqrt)
+                            Perems.Result = Perems.Number1Double / (Math.Pow(Perems.Number2Double, 1 / Perems.RadicalDouble));
+                        break;
 
 
 
+                }
             }
+            else 
+            {
+                switch (Perems.Operation)
+                {
+                    case "+":
+                            Perems.Result = Perems.Number1Double + Perems.Number2Double;
+                        break;
+                    case "-":
+                            Perems.Result = Perems.Number1Double - Perems.Number2Double;
+                        break;
+                    case "*":
+                            Perems.Result = Perems.Number1Double * Perems.Number2Double;
+                        break;
+                    case "/":
+                            Perems.Result = Perems.Number1Double / Perems.Number2Double;
+                        break;
+                    case "Sqrt":
+                        Perems.Result = (Math.Pow(Perems.Number1Double, 1 / Perems.Number2Double));
+                        break;
+
+
+
+                }
+            }
+
             return Perems.Result;
 
         }

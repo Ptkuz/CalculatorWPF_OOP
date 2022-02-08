@@ -7,16 +7,12 @@ using System.Threading.Tasks;
 namespace CalculatorWPFLibrery
 {
     
-    public class PrintOperations
+    public static class PrintOperations
     {
        static string? result = null;
 
 
 
-        static string sqrtN1 = $"sqrt({Perems.Number1})";
-        static string sqrtN2 = $"sqrt({Perems.Number2})";
-        static string sqrtN1R = $"sqrt({Perems.Number1})^{Perems.Radical}";
-        static string sqrtN2R = $"sqrt({Perems.Number2})^{Perems.Radical}";
 
         static string stepenN1 = $"({Perems.Number1})^";
         static string stepenN2 = $"({Perems.Number2})^";
@@ -44,7 +40,7 @@ namespace CalculatorWPFLibrery
         // sqrt(1)
         public static string OperationPrintsqrtN() 
         {
-            result = sqrtN1;
+            result = $"sqrt({Perems.Number1})";
             return result;
         
         }
@@ -52,7 +48,7 @@ namespace CalculatorWPFLibrery
         //sqrt(1)^1/2
         public static string OperationPrintsqrtNR() 
         {
-            result = sqrtN1R;
+            result = $"sqrt({Perems.Number1})^{Perems.Number2}";
             return result;
         
         }
@@ -61,27 +57,30 @@ namespace CalculatorWPFLibrery
         //1+sqrt(2)
         public static string OperationPrintNOsqrtN() 
         {
-            result = $"{Perems.Number1} {Perems.Operation} {sqrtN2}";
+            result = $"{Perems.Number1} {Perems.PrevOperation} sqrt({Perems.Number2})";
             return result;
         }
 
         // 1+sqrt(2)^1/3
         public static string OperationPrintNOsqrtNR() 
         {
-            result = $"{Perems.Number1} {Perems.Operation} {sqrtN2R}";
+            result = $"{Perems.PrevNumber1} {Perems.PrevOperation} sqrt({Perems.Number2})^{Perems.Radical}";
             return result;
         }
+
+
+
 
         // 1^
         public static string OperationPrintStepenN()
         {
-            result = stepenN1;
+            result = $"({Perems.Number1})^"; ;
             return result;
 
         }
 
         //1^2
-        public static string OperationPrinStepenNR()
+        public static string OperationPrintStepenND()
         {
             result = stepenN1D;
             return result;
@@ -101,6 +100,9 @@ namespace CalculatorWPFLibrery
             result = $"{Perems.Number1} {Perems.Operation} {stepenN2D}";
             return result;
         }
+
+
+
 
         // 1/20
         public static string OperationPrintProcent() 

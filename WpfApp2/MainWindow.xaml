@@ -59,11 +59,11 @@
 
         <Button Style="{StaticResource Operations}" x:Name="NumberProcent" HorizontalAlignment="Left" Margin="4,158,0,0" VerticalAlignment="Top" Width="50" Height="50
                  ">
-            <Button Style="{StaticResource Operations}" x:Name="OneDivideX" Content="1\X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50                  "/>
+            <Button Style="{StaticResource Operations}" x:Name="OneDivideX" Content="1/X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50                  " Click="Operations_Click"/>
         </Button>
-        <Button Style="{StaticResource Operations}" x:Name="X2" Content="X^2" HorizontalAlignment="Left" Margin="58,158,0,0" VerticalAlignment="Top" Width="50" Height="50                  "/>
-        <Button Style="{StaticResource Operations}" x:Name="SQRT" Content="Sqrt" HorizontalAlignment="Left" Margin="114,158,0,0" VerticalAlignment="Top" Width="50" Height="50                  "/>
-        <Button Style="{StaticResource Operations}" x:Name="Procent" Content="%" HorizontalAlignment="Left" Margin="4,103,0,0" VerticalAlignment="Top" Width="50" Height="50                  " RenderTransformOrigin="-0.218,0.452"/>
+        <Button Style="{StaticResource Operations}" x:Name="X2" Content="X^Y" HorizontalAlignment="Left" Margin="58,158,0,0" VerticalAlignment="Top" Width="50" Height="50                  " Click="Operations_Click"/>
+        <Button Style="{StaticResource Operations}" x:Name="SQRT" Content="Sqrt" HorizontalAlignment="Left" Margin="114,158,0,0" VerticalAlignment="Top" Width="50" Height="50                  " Click="Operations_Click"/>
+        <Button Style="{StaticResource Operations}" x:Name="Procent" Content="%" HorizontalAlignment="Left" Margin="4,103,0,0" VerticalAlignment="Top" Width="50" Height="50                  " RenderTransformOrigin="-0.218,0.452" Click="Operations_Click"/>
         <Button Style="{StaticResource Operations}" x:Name="CE" Content="CE" HorizontalAlignment="Left" Margin="58,103,0,0" VerticalAlignment="Top" Width="50" Height="50                  " RenderTransformOrigin="-0.218,0.452"/>
         <Button Style="{StaticResource Operations}" x:Name="NumberProcent_Copy5" HorizontalAlignment="Left" Margin="114,103,0,0" VerticalAlignment="Top" Width="50" Height="50                  " RenderTransformOrigin="-0.218,0.452">
             <Button Style="{StaticResource Operations}" x:Name="C" Content="C" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50                  " RenderTransformOrigin="-0.218,0.452" Click="C_Click"/>

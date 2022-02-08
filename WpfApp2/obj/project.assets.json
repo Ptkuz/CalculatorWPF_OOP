@@ -27,23 +27,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\evtku\\.nuget\\packages\\": {},
+    "C:\\Users\\ptkuz\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\evtku\\source\\repos\\WpfApp2\\WpfApp2\\WpfApp2.csproj",
+      "projectUniqueName": "C:\\Users\\ptkuz\\source\\repos\\CalculatorWPF_OOP\\CalculatorWPF_OOP\\WpfApp2\\WpfApp2.csproj",
       "projectName": "WpfApp2",
-      "projectPath": "C:\\Users\\evtku\\source\\repos\\WpfApp2\\WpfApp2\\WpfApp2.csproj",
-      "packagesPath": "C:\\Users\\evtku\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\evtku\\source\\repos\\WpfApp2\\WpfApp2\\obj\\",
+      "projectPath": "C:\\Users\\ptkuz\\source\\repos\\CalculatorWPF_OOP\\CalculatorWPF_OOP\\WpfApp2\\WpfApp2.csproj",
+      "packagesPath": "C:\\Users\\ptkuz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ptkuz\\source\\repos\\CalculatorWPF_OOP\\CalculatorWPF_OOP\\WpfApp2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\evtku\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ptkuz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -58,8 +58,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\evtku\\source\\repos\\WpfApp2\\CalculatorWPFLibrery\\CalculatorWPFLibrery.csproj": {
-              "projectPath": "C:\\Users\\evtku\\source\\repos\\WpfApp2\\CalculatorWPFLibrery\\CalculatorWPFLibrery.csproj"
+            "C:\\Users\\ptkuz\\source\\repos\\CalculatorWPF_OOP\\CalculatorWPF_OOP\\CalculatorWPFLibrery\\CalculatorWPFLibrery.csproj": {
+              "projectPath": "C:\\Users\\ptkuz\\source\\repos\\CalculatorWPF_OOP\\CalculatorWPF_OOP\\CalculatorWPFLibrery\\CalculatorWPFLibrery.csproj"
             }
           }
         }
