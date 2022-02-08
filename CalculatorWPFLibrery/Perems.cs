@@ -19,7 +19,6 @@
 
         public static bool FlagOper { get; set; } = false;
         public static bool FlagOperComp { get; set; } = false;
-        public static bool FlagRadical { get; set; } = false;
 
 
         public static void DropPerem()
@@ -41,7 +40,6 @@
 
                 FlagOper = false;
             FlagOperComp = false;
-            FlagRadical = false;
     }
 
 

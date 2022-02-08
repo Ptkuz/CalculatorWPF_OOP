@@ -11,16 +11,13 @@ namespace CalculatorWPFLibrery
     {
        static string? result = null;
 
-
-
-
-        static string stepenN1 = $"({Perems.Number1})^";
-        static string stepenN2 = $"({Perems.Number2})^";
-        static string stepenN1D = $"({Perems.Number1})^{Perems.Degree}";
-        static string stepenN2D = $"({Perems.Number2})^{Perems.Degree}";
-
         static string OneDevideN = $"1/{Perems.Number1}";
         static string procentOper = $"{Perems.Number1} {Perems.Operation} {Perems.Number2}%";
+
+
+        /// <summary>
+        /// ОПЕРАЦИИ С ЧИСЛАМИ
+        /// </summary>
 
         // 1 + 2
         public static string OperationPrintNON() 
@@ -36,6 +33,11 @@ namespace CalculatorWPFLibrery
             result = $"{Perems.Number1} {Perems.Operation}";
             return result;                
         }
+
+
+        /// <summary>
+        /// ОПЕРАЦИИ С КОРНЕМ
+        /// </summary>
 
         // sqrt(1)
         public static string OperationPrintsqrtN() 
@@ -70,7 +72,10 @@ namespace CalculatorWPFLibrery
 
 
 
-
+        /// <summary>
+        /// ОПЕРАЦИИ С СТЕПЕНЬЮ
+        /// </summary>
+        
         // 1^
         public static string OperationPrintStepenN()
         {
@@ -82,7 +87,7 @@ namespace CalculatorWPFLibrery
         //1^2
         public static string OperationPrintStepenND()
         {
-            result = stepenN1D;
+            result = $"({Perems.Number1})^{Perems.Number2}";
             return result;
 
         }
@@ -90,31 +95,40 @@ namespace CalculatorWPFLibrery
         // 1+2^
         public static string OperationPrintNOStepenN()
         {
-            result = $"{Perems.Number1} {Perems.Operation} {stepenN2}";
+            result = $"{Perems.Number1} {Perems.PrevOperation} {Perems.Number2}^";
             return result;
         }
 
         // 1+2^3
         public static string OperationPrintNOStepenND()
         {
-            result = $"{Perems.Number1} {Perems.Operation} {stepenN2D}";
+            result = $"{Perems.PrevNumber1} {Perems.PrevOperation} {Perems.Number2}^{Perems.Degree}";
             return result;
         }
 
 
 
 
+
+
         // 1/20
-        public static string OperationPrintProcent() 
+        public static string OperationPrint1DevideX() 
         {
-            result = OneDevideN;
+            result = $"1/{Perems.Number1}";
             return result;        
+        }
+
+        // 1+(1/X)
+        public static string OperationPrintNODevideN() 
+        {
+            result = $"{Perems.Number1} {Perems.PrevOperation} 1/{Perems.Number2}";
+            return result;
         }
 
         // 100 - 10%
         public static string OperationPrintNOperProcent() 
         {
-            result = procentOper;
+            result = $"{Perems.Number1} {Perems.PrevOperation} {Perems.Number2}%";
             return result;
         
         }

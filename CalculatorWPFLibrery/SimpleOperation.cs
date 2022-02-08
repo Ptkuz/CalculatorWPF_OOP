@@ -1,63 +1,129 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CalculatorWPFLibrery
+﻿namespace CalculatorWPFLibrery
 {
     public static class SimpleOperation
     {
-        public static double Oper() 
+
+
+
+
+        public static double Oper()
         {
             Perems.Number1Double = Convert.ToDouble(Perems.Number1);
             Perems.Number2Double = Convert.ToDouble(Perems.Number2);
             Perems.RadicalDouble = Convert.ToDouble(Perems.Radical);
+            Perems.DegreeDouble = Convert.ToDouble(Perems.Degree);
 
             if (Perems.PrevOperation != null && Perems.FlagOperComp)
             {
                 switch (Perems.PrevOperation)
                 {
-                    case "+":
+                    case ButtonNames.ButtonPlus:
                         if (Perems.PrevOperationComp == ButtonNames.ButtonSqrt)
                             Perems.Result = Perems.Number1Double + (Math.Pow(Perems.Number2Double, 1 / Perems.RadicalDouble));
+
+                        else if (Perems.PrevOperationComp == ButtonNames.ButtonDegree)
+                            Perems.Result = Perems.Number1Double + (Math.Pow(Perems.Number2Double, Perems.DegreeDouble));
+                        else if (Perems.PrevOperationComp == ButtonNames.Button1DevideX)
+                            Perems.Result = Perems.Number1Double + (1 / Perems.Number2Double);
                         break;
-                    case "-":
+                    case ButtonNames.ButtonMinus:
                         if (Perems.PrevOperationComp == ButtonNames.ButtonSqrt)
                             Perems.Result = Perems.Number1Double - (Math.Pow(Perems.Number2Double, 1 / Perems.RadicalDouble));
+
+                        else if (Perems.PrevOperationComp == ButtonNames.ButtonDegree)
+                            Perems.Result = Perems.Number1Double - (Math.Pow(Perems.Number2Double, Perems.DegreeDouble));
+                        else if (Perems.PrevOperationComp == ButtonNames.Button1DevideX)
+                            Perems.Result = Perems.Number1Double - (1 / Perems.Number2Double);
                         break;
-                    case "*":
+                    case ButtonNames.ButtonMulti:
                         if (Perems.PrevOperationComp == ButtonNames.ButtonSqrt)
                             Perems.Result = Perems.Number1Double * (Math.Pow(Perems.Number2Double, 1 / Perems.RadicalDouble));
+
+                        else if (Perems.PrevOperationComp == ButtonNames.ButtonDegree)
+                            Perems.Result = Perems.Number1Double * (Math.Pow(Perems.Number2Double, Perems.DegreeDouble));
+                        else if (Perems.PrevOperationComp == ButtonNames.Button1DevideX)
+                            Perems.Result = Perems.Number1Double * (1 / Perems.Number2Double);
                         break;
-                    case "/":
+                    case ButtonNames.ButtonDevide:
                         if (Perems.PrevOperationComp == ButtonNames.ButtonSqrt)
                             Perems.Result = Perems.Number1Double / (Math.Pow(Perems.Number2Double, 1 / Perems.RadicalDouble));
+
+                        else if (Perems.PrevOperationComp == ButtonNames.ButtonDegree)
+                            Perems.Result = Perems.Number1Double / (Math.Pow(Perems.Number2Double, Perems.DegreeDouble));
+                        else if (Perems.PrevOperationComp == ButtonNames.Button1DevideX)
+                            Perems.Result = Perems.Number1Double / (1 / Perems.Number2Double);
                         break;
 
 
 
                 }
             }
-            else 
+            else
             {
                 switch (Perems.Operation)
                 {
-                    case "+":
-                            Perems.Result = Perems.Number1Double + Perems.Number2Double;
+                    case ButtonNames.ButtonPlus:
+                        Perems.Result = Perems.Number1Double + Perems.Number2Double;
                         break;
-                    case "-":
-                            Perems.Result = Perems.Number1Double - Perems.Number2Double;
+                    case ButtonNames.ButtonMinus:
+                        Perems.Result = Perems.Number1Double - Perems.Number2Double;
                         break;
-                    case "*":
-                            Perems.Result = Perems.Number1Double * Perems.Number2Double;
+                    case ButtonNames.ButtonMulti:
+                        Perems.Result = Perems.Number1Double * Perems.Number2Double;
                         break;
-                    case "/":
-                            Perems.Result = Perems.Number1Double / Perems.Number2Double;
+                    case ButtonNames.ButtonDevide:
+                        Perems.Result = Perems.Number1Double / Perems.Number2Double;
                         break;
-                    case "Sqrt":
+                    case ButtonNames.ButtonSqrt:
                         Perems.Result = (Math.Pow(Perems.Number1Double, 1 / Perems.Number2Double));
                         break;
+                    case ButtonNames.ButtonDegree:
+                        Perems.Result = (Math.Pow(Perems.Number1Double, Perems.Number2Double));
+                        break;
+                    case ButtonNames.Button1DevideX:
+                        if (Perems.Number2 != null)
+                        {
+                            switch (Perems.PrevOperation)
+                            {
+                                case ButtonNames.ButtonPlus:
+                                    Perems.Result = Perems.Number1Double + (1 / Perems.Number2Double);
+                                    break;
+                                case ButtonNames.ButtonMinus:
+                                    Perems.Result = Perems.Number1Double - (1 / Perems.Number2Double);
+                                    break;
+                                case ButtonNames.ButtonMulti:
+                                    Perems.Result = Perems.Number1Double * (1 / Perems.Number2Double);
+                                    break;
+                                case ButtonNames.ButtonDevide:
+                                    Perems.Result = Perems.Number1Double / (1 / Perems.Number2Double);
+                                    break;
+
+                            }
+                        }
+                        else
+                            Perems.Result = 1 / Perems.Number1Double;
+
+
+                        break;
+                    case ButtonNames.ButtonProcent:
+                        switch (Perems.PrevOperation)
+                        {
+                            case ButtonNames.ButtonPlus:
+                                Perems.Result = Perems.Number1Double + ((Perems.Number1Double * Perems.Number2Double) / 100);
+                                break;
+                            case ButtonNames.ButtonMinus:
+                                Perems.Result = Perems.Number1Double - ((Perems.Number1Double * Perems.Number2Double) / 100);
+                                break;
+                            case ButtonNames.ButtonMulti:
+                                Perems.Result = Perems.Number1Double * ((Perems.Number1Double * Perems.Number2Double) / 100);
+                                break;
+                            case ButtonNames.ButtonDevide:
+                                Perems.Result = Perems.Number1Double / ((Perems.Number1Double * Perems.Number2Double) / 100);
+                                break;
+
+                        }
+                        break;
+
 
 
 
@@ -68,6 +134,6 @@ namespace CalculatorWPFLibrery
 
         }
 
-   
+
     }
 }

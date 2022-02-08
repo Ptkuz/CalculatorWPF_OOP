@@ -16,7 +16,6 @@ using CalculatorWPFLibrery;
 
 namespace WpfApp2
 {
-    // Изменение для гита
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -31,13 +30,11 @@ namespace WpfApp2
 
         private void Numbers_Click(object sender, RoutedEventArgs e)
         {
-            //// Ввод первого числа
             Button? number = sender as Button;
             string? ButtonText = number.Content.ToString();
             string TextBoxStr = TextResult.Text;
             string OperationOne = NumbersEnter.Method(TextBoxStr, ButtonText);
             TextResult.Text = OperationOne;
-            //// Ввод первого числа
         }
 
         public void ComplexOperation( object sender) 
@@ -76,28 +73,50 @@ namespace WpfApp2
                 Perems.Operation = operation.Content.ToString();
                 if (ButtonNames.EqualsOperations() && Perems.Number1 != null)
                 {
-                    Perems.Number2 = TextResult.Text;
-                    Perems.FlagOperComp = true;
+                    EnterResult = ClassResult.MethodResult(str);
+                    if (Perems.Operation == ButtonNames.Button1DevideX || Perems.Operation == ButtonNames.ButtonProcent) 
+                    { 
+                        TextResult.Text = EnterResult;
+                        TextOperation.Text = ChoiseOperation.ChoiseMethod();
+                    }
+                    else
+                    {
+
+                        Perems.Number2 = TextResult.Text;
+                        Perems.FlagOperComp = true;
+                        TextOperation.Text = ChoiseOperation.ChoiseMethod();
+                        TextResult.Clear();
+                    }
                 }
                 else
                 {
                     Perems.Number1 = EnterResult;
+                    TextOperation.Text = ChoiseOperation.ChoiseMethod();
+                    TextResult.Clear();
                 }
-                TextOperation.Text = ChoiseOperation.ChoiseMethod();
-                TextResult.Clear();
+                
             }
-            //// Первая операция
             else if (Perems.Number1 == null)
             {
                 Perems.FlagOper = true;
                 Button? operation = sender as Button;
                 Perems.Operation = operation.Content.ToString();
-                Perems.Number1 = TextResult.Text;
+                if (ButtonNames.EqualsOperations())
+                {
+                    Perems.Number1 = TextResult.Text;
+                    string str = TextResult.Text;
+                    string EnterResult = ClassResult.MethodResult(str);
+                    TextResult.Text = EnterResult;
+
+                }
+                else
+                {
+                    Perems.Number1 = TextResult.Text;
+                    TextResult.Clear();
+                }
                 TextOperation.Text = ChoiseOperation.ChoiseMethod();
-                TextResult.Clear();
 
             }
-            //// Первая операция
         
         }
 

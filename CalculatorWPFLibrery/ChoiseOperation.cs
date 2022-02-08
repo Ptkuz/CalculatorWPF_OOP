@@ -12,7 +12,10 @@ namespace CalculatorWPFLibrery
 
         public static bool SimpleOper() 
         {
-            if (Perems.Operation == "+" || Perems.Operation == "-" || Perems.Operation == "*" || Perems.Operation == "/") 
+            if (Perems.Operation == ButtonNames.ButtonPlus || 
+                Perems.Operation == ButtonNames.ButtonMinus || 
+                Perems.Operation == ButtonNames.ButtonMulti || 
+                Perems.Operation == ButtonNames.ButtonDevide) 
             { 
                 return true;
             }
@@ -22,14 +25,16 @@ namespace CalculatorWPFLibrery
 
         public static string ChoiseMethod() 
         {
-            if ((Perems.Number1 == null && Perems.FlagOper == true && SimpleOper()) || 
-                (Perems.Number1 != null && Perems.Number2 != null && Perems.FlagOper == true && SimpleOper()) || 
+            // ПРОСТЫЕ ОПЕРАЦИИ
+
+            if ((Perems.Number1 == null && Perems.FlagOper == true && SimpleOper()) ||
+                (Perems.Number1 != null && Perems.Number2 != null && Perems.FlagOper == true && SimpleOper()) ||
                 (Perems.Number1 != null && Perems.Number2 != null && Perems.FlagOperComp == true && SimpleOper()))
             {
                 result = PrintOperations.OperationPrintNO();
                 return result;
             }
-            else if ((Perems.Number1 != null && Perems.Number2 == null && SimpleOper()) || 
+            else if ((Perems.Number1 != null && Perems.Number2 == null && SimpleOper()) ||
                 (Perems.Number1 != null && Perems.Number2 != null && Perems.FlagOper == false && SimpleOper()))
             {
                 result = PrintOperations.OperationPrintNON();
@@ -38,7 +43,7 @@ namespace CalculatorWPFLibrery
 
 
             // КОРЕНЬ
-            else if (((Perems.Number1 != null && Perems.FlagOper == true && Perems.Operation == ButtonNames.ButtonSqrt && Perems.FlagOperComp == false) || 
+            else if (((Perems.Number1 != null && Perems.FlagOper == true && Perems.Operation == ButtonNames.ButtonSqrt && Perems.FlagOperComp == false) ||
                 (Perems.Number1 != null && Perems.Number2 != null && Perems.FlagOper == true && Perems.Operation == ButtonNames.ButtonSqrt && Perems.FlagOperComp == false)))
             {
                 result = PrintOperations.OperationPrintsqrtN();
@@ -55,8 +60,8 @@ namespace CalculatorWPFLibrery
                 result = PrintOperations.OperationPrintNOsqrtN();
                 return result;
             }
-            else if (Perems.Operation == ButtonNames.ButtonEquals && Perems.Number1 != null && Perems.PrevOperationComp == ButtonNames.ButtonSqrt) 
-            { 
+            else if (Perems.Operation == ButtonNames.ButtonEquals && Perems.Number1 != null && Perems.PrevOperationComp == ButtonNames.ButtonSqrt)
+            {
                 result = PrintOperations.OperationPrintNOsqrtNR();
                 return result;
             }
@@ -72,20 +77,42 @@ namespace CalculatorWPFLibrery
             }
             else if (Perems.Number1 != null && Perems.Number2 != null && Perems.FlagOper == false && Perems.Operation == ButtonNames.ButtonDegree)
             {
-                result = PrintOperations.OperationPrintsqrtNR();
+                result = PrintOperations.OperationPrintStepenND();
                 return result;
             }
             else if (Perems.Number1 != null && Perems.Number2 != null && Perems.FlagOperComp == true && Perems.Operation == ButtonNames.ButtonDegree)
             {
-                result = PrintOperations.OperationPrintNOsqrtN();
+                result = PrintOperations.OperationPrintNOStepenN();
                 return result;
             }
             else if (Perems.Operation == ButtonNames.ButtonEquals && Perems.Number1 != null && Perems.PrevOperationComp == ButtonNames.ButtonDegree)
             {
-                result = PrintOperations.OperationPrintNOsqrtNR();
+                result = PrintOperations.OperationPrintNOStepenND();
                 return result;
             }
 
+            // 1/X
+            else if (((Perems.Number1 != null && Perems.Number2 == null && Perems.FlagOper == true && Perems.Operation == ButtonNames.Button1DevideX && Perems.FlagOperComp == false) ||
+                (Perems.Number1 != null && Perems.Number2 == null && Perems.FlagOper == true && Perems.Operation == ButtonNames.Button1DevideX && Perems.FlagOperComp == false)))
+            {
+                result = PrintOperations.OperationPrint1DevideX();
+                return result;
+
+            }
+
+            // 1+(2/X)
+            else if (Perems.Number1 != null && Perems.Number2 != null && Perems.Operation == ButtonNames.Button1DevideX) 
+            {
+                result = PrintOperations.OperationPrintNODevideN();
+                return result;
+            }
+
+            //1-20%
+            else if (Perems.Number1 != null && Perems.Number2 != null && Perems.Operation == ButtonNames.ButtonProcent)
+            {
+                result = PrintOperations.OperationPrintNOperProcent();
+                return result;
+            }
 
 
             return result;
