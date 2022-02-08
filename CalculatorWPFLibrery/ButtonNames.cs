@@ -15,7 +15,7 @@ namespace CalculatorWPFLibrery
         public const string ButtonEquals = "=";
         public const string Button1DevideX = "1/X";
         public const string ButtonSqrt = "Sqrt";
-        public const string ButtonDegree = "X^Y";
+        public const string ButtonDegree = "Sqr";
         public const string ButtonProcent = "%";
 
         public static bool EqualsOperations() 

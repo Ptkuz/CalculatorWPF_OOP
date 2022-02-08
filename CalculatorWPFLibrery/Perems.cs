@@ -10,6 +10,7 @@
         public static string? Number2 { get; set; }
         public static string? Radical { get; set; }
         public static string? Degree { get; set; }
+        public static string? SQR_SQRT { get; set; }
 
         public static double Number1Double { get; set; }
         public static double Number2Double { get; set; }

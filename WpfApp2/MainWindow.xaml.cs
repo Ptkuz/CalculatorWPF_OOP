@@ -44,6 +44,7 @@ namespace WpfApp2
             string str = TextResult.Text;
             Perems.PrevOperationComp = Perems.Operation;
             string EnterResult = ClassResult.MethodResult(str);
+            Perems.SQR_SQRT = Perems.Radical != null ? Perems.Radical : Perems.Degree;
             Perems.Number1 = EnterResult;
             Button? operation = sender as Button;
             Perems.Operation = operation.Content.ToString();
@@ -59,6 +60,7 @@ namespace WpfApp2
         {
             if (Perems.Number1 != null && Perems.Number2 != null && Perems.FlagOperComp) 
             {
+               
                 ComplexOperation(sender);
                 TextResult.Clear();
 
@@ -108,6 +110,7 @@ namespace WpfApp2
                     string EnterResult = ClassResult.MethodResult(str);
                     TextResult.Text = EnterResult;
 
+
                 }
                 else
                 {
@@ -145,6 +148,23 @@ namespace WpfApp2
             TextOperation.Clear();
             TextResult.Text = "0";
             Perems.DropPerem();
+        }
+
+        private void CE_Click(object sender, RoutedEventArgs e)
+        {
+            if (TextResult.Text!=null && TextResult.Text!="0") 
+            {
+                TextResult.Clear();
+                TextResult.Text = "0";
+            }
+        }
+
+        private void NumberProcent_Copy11_Click(object sender, RoutedEventArgs e)
+        {
+            if (TextResult.Text.Length>1)  
+            TextResult.Text = TextResult.Text.Remove(TextResult.Text.Length - 1);
+            else
+                TextResult.Text = "0";
         }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="471" Width="245">
+        Title="MainWindow" Height="471" Width="276">
     <Window.Resources>
 
         <Style x:Key= "ButtonNumbers">
@@ -23,59 +23,249 @@
         </Style>
 
         <Style x:Key="GridStyle">
-            <Setter Property="Control.Background" Value="Gray"/>
+            <Setter Property="Control.Background" Value="#FF203B54"  />
         </Style>
+
+
     </Window.Resources>
 
-    <Grid Name="Numbers" Style="{StaticResource GridStyle}" HorizontalAlignment="Left" Width="457">
+    <Grid Name="Numbers" Style="{StaticResource GridStyle}" HorizontalAlignment="Center" Width="276">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF00E2FF" Offset="0.212"/>
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="#FF0094A7" Offset="0.462"/>
+                <GradientStop Color="#FF00535D" Offset="0.669"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="322*"/>
-            <ColumnDefinition Width="0*"/>
-            <ColumnDefinition Width="0*"/>
-            <ColumnDefinition Width="135*"/>
-        </Grid.ColumnDefinitions>
-        <Button Style="{StaticResource ButtonNumbers}"  x:Name="Number7" Content="7" HorizontalAlignment="Left" Margin="4,213,0,0" VerticalAlignment="Top" Width="50" Height="50
-                 " Click="Numbers_Click" x:FieldModifier="public"/>
-        <Button Style="{StaticResource ButtonNumbers}"  x:Name="Number8" Content="8" HorizontalAlignment="Left" Margin="58,213,0,0" VerticalAlignment="Top" Width="50" Height="50
-                 " Click="Numbers_Click" x:FieldModifier="public"/>
-        <Button Style="{StaticResource ButtonNumbers}" x:Name="Number9" Content="9" HorizontalAlignment="Left" Margin="114,213,0,0" VerticalAlignment="Top" Width="50" Height="50
-                 " Click="Numbers_Click" x:FieldModifier="public" />
-        <Button Style="{StaticResource ButtonNumbers}" x:Name="Number4" Content="4" HorizontalAlignment="Left" Margin="4,268,0,0" VerticalAlignment="Top" Width="50" Height="50
-                 " Click="Numbers_Click" x:FieldModifier="public"/>
-        <Button Style="{StaticResource ButtonNumbers}" x:Name="Number5" Content="5" HorizontalAlignment="Left" Margin="58,268,0,0" VerticalAlignment="Top" Width="50" Height="50
-                 " Click="Numbers_Click" x:FieldModifier="public"/>
-        <Button Style="{StaticResource ButtonNumbers}" x:Name="Number6" Content="6" HorizontalAlignment="Left" Margin="114,268,0,0" VerticalAlignment="Top" Width="50" Height="50
-                 " Click="Numbers_Click" x:FieldModifier="public"/>
-        <Button Style="{StaticResource ButtonNumbers}" x:Name="Number1" Content="1" HorizontalAlignment="Left" Margin="4,323,0,0" VerticalAlignment="Top" Width="50" Height="50
-                 " Click="Numbers_Click" x:FieldModifier="public"/>
-        <Button Style="{StaticResource ButtonNumbers}" x:Name="Number2" Content="2" HorizontalAlignment="Left" Margin="58,323,0,0" VerticalAlignment="Top" Width="50" Height="50
-                 " Click="Numbers_Click" x:FieldModifier="public"/>
-        <Button Style="{StaticResource ButtonNumbers}" x:Name="Number3" Content="3" HorizontalAlignment="Left" Margin="114,323,0,0" VerticalAlignment="Top" Width="50" Height="50
-                 " Click="Numbers_Click" x:FieldModifier="public"/>
-        <Button Style="{StaticResource ButtonNumbers}" x:Name="Number0" Content="0" HorizontalAlignment="Left" Margin="4,378,0,0" VerticalAlignment="Top" Width="104" Height="50
-                 " Click="Numbers_Click" x:FieldModifier="public"/>
-        <Button Style="{StaticResource ButtonNumbers}" x:Name="NumberPoint" Content="," HorizontalAlignment="Left" Margin="114,378,0,0" VerticalAlignment="Top" Width="50" Height="50
-                 " Click="Numbers_Click" x:FieldModifier="public"/>
 
-        <Button Style="{StaticResource Operations}" x:Name="NumberProcent" HorizontalAlignment="Left" Margin="4,158,0,0" VerticalAlignment="Top" Width="50" Height="50
-                 ">
-            <Button Style="{StaticResource Operations}" x:Name="OneDivideX" Content="1/X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50                  " Click="Operations_Click"/>
+
+
+            <ColumnDefinition Width="107*"/>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="149*"/>
+
+
+
+        </Grid.ColumnDefinitions>
+        <Button Style="{StaticResource ButtonNumbers}"  x:Name="Number7" Content="7" HorizontalAlignment="Left" Margin="31,215,0,0" VerticalAlignment="Top" Width="50" Height="50
+                 " Click="Numbers_Click" x:FieldModifier="public" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF00F9FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
         </Button>
-        <Button Style="{StaticResource Operations}" x:Name="X2" Content="X^Y" HorizontalAlignment="Left" Margin="58,158,0,0" VerticalAlignment="Top" Width="50" Height="50                  " Click="Operations_Click"/>
-        <Button Style="{StaticResource Operations}" x:Name="SQRT" Content="Sqrt" HorizontalAlignment="Left" Margin="114,158,0,0" VerticalAlignment="Top" Width="50" Height="50                  " Click="Operations_Click"/>
-        <Button Style="{StaticResource Operations}" x:Name="Procent" Content="%" HorizontalAlignment="Left" Margin="4,103,0,0" VerticalAlignment="Top" Width="50" Height="50                  " RenderTransformOrigin="-0.218,0.452" Click="Operations_Click"/>
-        <Button Style="{StaticResource Operations}" x:Name="CE" Content="CE" HorizontalAlignment="Left" Margin="58,103,0,0" VerticalAlignment="Top" Width="50" Height="50                  " RenderTransformOrigin="-0.218,0.452"/>
-        <Button Style="{StaticResource Operations}" x:Name="NumberProcent_Copy5" HorizontalAlignment="Left" Margin="114,103,0,0" VerticalAlignment="Top" Width="50" Height="50                  " RenderTransformOrigin="-0.218,0.452">
-            <Button Style="{StaticResource Operations}" x:Name="C" Content="C" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50                  " RenderTransformOrigin="-0.218,0.452" Click="C_Click"/>
+        <Button Style="{StaticResource ButtonNumbers}"  x:Name="Number8" Content="8" HorizontalAlignment="Left" Margin="85,215,0,0" VerticalAlignment="Top" Width="50" Height="50
+                 " Click="Numbers_Click" x:FieldModifier="public" Grid.ColumnSpan="3" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF00F9FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
         </Button>
-        <Button Style="{StaticResource Operations}" x:Name="Devide" Content="/" HorizontalAlignment="Left" Margin="168,158,0,0" VerticalAlignment="Top" Width="50" Height="50                  " Click="Operations_Click"/>
-        <Button Style="{StaticResource Operations}" x:Name="Multiply" Content="*" HorizontalAlignment="Left" Margin="168,213,0,0" VerticalAlignment="Top" Width="50" Height="50                  " Click="Operations_Click"/>
-        <Button Style="{StaticResource Operations}" x:Name="Minus" Content="-" HorizontalAlignment="Left" Margin="168,268,0,0" VerticalAlignment="Top" Width="50" Height="50                  " Click="Operations_Click"/>
-        <Button Style="{StaticResource Operations}" x:Name="Plus" Content="+" HorizontalAlignment="Left" Margin="168,323,0,0" VerticalAlignment="Top" Width="50" Height="50                  " Click="Operations_Click"/>
-        <Button Style="{StaticResource Operations}" x:Name="NumberProcent_Copy11" Content="." HorizontalAlignment="Left" Margin="168,103,0,0" VerticalAlignment="Top" Width="50" Height="50                  " FontSize="30"/>
-        <Button Style="{StaticResource ButtonNumbers}" Background="Green" x:Name="Result" Content="=" HorizontalAlignment="Left" Margin="168,378,0,0" VerticalAlignment="Top" Width="50" Height="50                  " Click="Result_Click"/>
-        <TextBox x:Name="TextResult" x:FieldModifier="public" HorizontalAlignment="Left" Margin="4,53,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="214" Height="45" FontSize="28"/>
-        <TextBox x:Name="TextOperation" x:FieldModifier="public" HorizontalAlignment="Left" Margin="4,8,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Height="45"/>
+        <Button Style="{StaticResource ButtonNumbers}" x:Name="Number9" Content="9" HorizontalAlignment="Left" Margin="14,215,0,0" VerticalAlignment="Top" Width="50" Height="50
+                 " Click="Numbers_Click" x:FieldModifier="public" Grid.Column="2" Foreground="White" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF00F9FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource ButtonNumbers}" x:Name="Number4" Content="4" HorizontalAlignment="Left" Margin="31,270,0,0" VerticalAlignment="Top" Width="50" Height="50
+                 " Click="Numbers_Click" x:FieldModifier="public" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF00F9FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource ButtonNumbers}" x:Name="Number5" Content="5" HorizontalAlignment="Left" Margin="85,270,0,0" VerticalAlignment="Top" Width="50" Height="50
+                 " Click="Numbers_Click" x:FieldModifier="public" Grid.ColumnSpan="3" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF00F9FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource ButtonNumbers}" x:Name="Number6" Content="6" HorizontalAlignment="Left" Margin="14,270,0,0" VerticalAlignment="Top" Width="50" Height="50
+                 " Click="Numbers_Click" x:FieldModifier="public" Grid.Column="2" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF00F9FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource ButtonNumbers}" x:Name="Number1" Content="1" HorizontalAlignment="Left" Margin="31,325,0,0" VerticalAlignment="Top" Width="50" Height="50
+                 " Click="Numbers_Click" x:FieldModifier="public" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF00F9FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource ButtonNumbers}" x:Name="Number2" Content="2" HorizontalAlignment="Left" Margin="85,325,0,0" VerticalAlignment="Top" Width="50" Height="50
+                 " Click="Numbers_Click" x:FieldModifier="public" Grid.ColumnSpan="3" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF00F9FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource ButtonNumbers}" x:Name="Number3" Content="3" HorizontalAlignment="Left" Margin="14,325,0,0" VerticalAlignment="Top" Width="50" Height="50
+                 " Click="Numbers_Click" x:FieldModifier="public" Grid.Column="2" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF00F9FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource ButtonNumbers}" x:Name="Number0" Content="0" HorizontalAlignment="Left" Margin="31,380,0,0" VerticalAlignment="Top" Width="104" Height="50
+                 " Click="Numbers_Click" x:FieldModifier="public" Grid.ColumnSpan="3" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF00F9FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource ButtonNumbers}" x:Name="NumberPoint" Content="," HorizontalAlignment="Left" Margin="14,380,0,0" VerticalAlignment="Top" Width="50" Height="50
+                 " Click="Numbers_Click" x:FieldModifier="public" Grid.Column="2" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF00F9FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button Style="{StaticResource Operations}" x:Name="NumberProcent" HorizontalAlignment="Left" Margin="31,160,0,0" VerticalAlignment="Top" Width="50" Height="50
+                 " Foreground="White">
+            <Button Style="{StaticResource Operations}" x:Name="OneDivideX" Content="1/X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50                  " Click="Operations_Click" Foreground="White">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFC300FF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </Button>
+        <Button Style="{StaticResource Operations}" x:Name="X2" Content="Sqr" HorizontalAlignment="Left" Margin="85,160,0,0" VerticalAlignment="Top" Width="50" Height="50                  " Click="Operations_Click" Grid.ColumnSpan="3" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFC300FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource Operations}" x:Name="SQRT" Content="Sqrt" HorizontalAlignment="Left" Margin="14,160,0,0" VerticalAlignment="Top" Width="50" Height="50                  " Click="Operations_Click" Grid.Column="2" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFC300FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource Operations}" x:Name="Procent" Content="%" HorizontalAlignment="Left" Margin="31,105,0,0" VerticalAlignment="Top" Width="50" Height="50                  " RenderTransformOrigin="-0.218,0.452" Click="Operations_Click" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFC300FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource Operations}" x:Name="CE" Content="CE" HorizontalAlignment="Left" Margin="85,105,0,0" VerticalAlignment="Top" Width="50" Height="50              " RenderTransformOrigin="-0.218,0.452" Click="CE_Click" Grid.ColumnSpan="3" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFE40000" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource Operations}" x:Name="NumberProcent_Copy5" HorizontalAlignment="Left" Margin="14,105,0,0" VerticalAlignment="Top" Width="50" Height="50                  " RenderTransformOrigin="-0.218,0.452" Grid.Column="2">
+            <Button Style="{StaticResource Operations}" x:Name="C" Content="C" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50                  " RenderTransformOrigin="-0.218,0.452" Click="C_Click" Foreground="White">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFE40000" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </Button>
+        <Button Style="{StaticResource Operations}" x:Name="Devide" Content="/" HorizontalAlignment="Left" Margin="68,160,0,0" VerticalAlignment="Top" Width="50" Height="50                  " Click="Operations_Click" Grid.Column="2" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF0084FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource Operations}" x:Name="Multiply" Content="*" HorizontalAlignment="Left" Margin="68,215,0,0" VerticalAlignment="Top" Width="50" Height="50                  " Click="Operations_Click" Grid.Column="2" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF0084FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource Operations}" x:Name="Minus" Content="-" HorizontalAlignment="Left" Margin="68,270,0,0" VerticalAlignment="Top" Width="50" Height="50                  " Click="Operations_Click" Grid.Column="2" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF0084FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource Operations}" x:Name="Plus" Content="+" HorizontalAlignment="Left" Margin="68,325,0,0" VerticalAlignment="Top" Width="50" Height="50                  " Click="Operations_Click" Grid.Column="2" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF0084FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource Operations}" x:Name="NumberProcent_Copy11" Content="Del" HorizontalAlignment="Left" Margin="68,105,0,0" VerticalAlignment="Top" Width="50" Height="50                  " FontSize="30" Click="NumberProcent_Copy11_Click" Grid.Column="2" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFE40000" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource ButtonNumbers}" x:Name="Result" Content="=" HorizontalAlignment="Left" Margin="68,380,0,0" VerticalAlignment="Top" Width="50" Height="50                  " Click="Result_Click" Grid.Column="2" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF00FF10" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="TextResult" x:FieldModifier="public" HorizontalAlignment="Left" Margin="31,55,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="214" Height="45" FontSize="37" Background="#FF00E2FF" BorderBrush="#FF00E2FF" SelectionBrush="White" Grid.ColumnSpan="3" >
+            <TextBox.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="Red" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Foreground>
+        </TextBox>
+        <TextBox x:Name="TextOperation" x:FieldModifier="public" HorizontalAlignment="Left" Margin="31,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Height="45" FontSize="25" BorderBrush="#FF00E2FF" Background="#FF00E2FF" Grid.ColumnSpan="3">
+            <TextBox.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="Red" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Foreground>
+        </TextBox>
     </Grid>
 
 
