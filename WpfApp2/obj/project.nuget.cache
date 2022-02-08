@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7jVuy35D7+/QzsCS2w81Hg2tcZTJHbh3dibH7DPCDDDpoCFJUV1ZDNZDBjMe3ebmst6/FqStFKDURGlFh2Apjg==",
+  "dgSpecHash": "5dYsh0ZoREwnDlCQ08xs9CMJIC5egcL80uu9Y4z4TrzFquD06e02UipNvL8JGHUMs3WWoNGkIshlQiyanRValw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ptkuz\\source\\repos\\CalculatorWPF_OOP\\CalculatorWPF_OOP\\WpfApp2\\WpfApp2.csproj",
+  "projectFilePath": "C:\\Users\\ptkuz\\source\\repos\\CalculatorWPF_OOP\\CalculatorWPF_OOP\\WpfApp2\\MainCalculator.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

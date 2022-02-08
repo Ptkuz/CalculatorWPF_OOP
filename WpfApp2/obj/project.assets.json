@@ -33,9 +33,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ptkuz\\source\\repos\\CalculatorWPF_OOP\\CalculatorWPF_OOP\\WpfApp2\\WpfApp2.csproj",
-      "projectName": "WpfApp2",
-      "projectPath": "C:\\Users\\ptkuz\\source\\repos\\CalculatorWPF_OOP\\CalculatorWPF_OOP\\WpfApp2\\WpfApp2.csproj",
+      "projectUniqueName": "C:\\Users\\ptkuz\\source\\repos\\CalculatorWPF_OOP\\CalculatorWPF_OOP\\WpfApp2\\MainCalculator.csproj",
+      "projectName": "MainCalculator",
+      "projectPath": "C:\\Users\\ptkuz\\source\\repos\\CalculatorWPF_OOP\\CalculatorWPF_OOP\\WpfApp2\\MainCalculator.csproj",
       "packagesPath": "C:\\Users\\ptkuz\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\ptkuz\\source\\repos\\CalculatorWPF_OOP\\CalculatorWPF_OOP\\WpfApp2\\obj\\",
       "projectStyle": "PackageReference",
