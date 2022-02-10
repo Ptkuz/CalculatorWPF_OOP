@@ -30,11 +30,17 @@ namespace WpfApp2
 
         private void Numbers_Click(object sender, RoutedEventArgs e)
         {
+            try { 
             Button? number = sender as Button;
             string? ButtonText = number.Content.ToString();
             string TextBoxStr = TextResult.Text;
             string OperationOne = NumbersEnter.Method(TextBoxStr, ButtonText);
             TextResult.Text = OperationOne;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void ComplexOperation( object sender) 
@@ -58,73 +64,81 @@ namespace WpfApp2
 
         private void Operations_Click(object sender, RoutedEventArgs e)
         {
-            if (Perems.Number1 != null && Perems.Number2 != null && Perems.FlagOperComp) 
+            try
             {
-               
-                ComplexOperation(sender);
-                TextResult.Clear();
-
-            }
-            else if (Perems.Number1 != null)
-            {
-                Perems.FlagOper = true;
-                string str = TextResult.Text;
-                string EnterResult = ClassResult.MethodResult(str);
-                Perems.PrevOperation = Perems.Operation;
-                Button? operation = sender as Button;
-                Perems.Operation = operation.Content.ToString();
-                if (ButtonNames.EqualsOperations() && Perems.Number1 != null)
+                if (Perems.Number1 != null && Perems.Number2 != null && Perems.FlagOperComp)
                 {
-                    EnterResult = ClassResult.MethodResult(str);
-                    if (Perems.Operation == ButtonNames.Button1DevideX || Perems.Operation == ButtonNames.ButtonProcent) 
-                    { 
-                        TextResult.Text = EnterResult;
-                        TextOperation.Text = ChoiseOperation.ChoiseMethod();
+
+                    ComplexOperation(sender);
+                    TextResult.Clear();
+
+                }
+                else if (Perems.Number1 != null)
+                {
+                    Perems.FlagOper = true;
+                    string str = TextResult.Text;
+                    string EnterResult = ClassResult.MethodResult(str);
+                    Perems.PrevOperation = Perems.Operation;
+                    Button? operation = sender as Button;
+                    Perems.Operation = operation.Content.ToString();
+                    if (ButtonNames.EqualsOperations() && Perems.Number1 != null)
+                    {
+                        EnterResult = ClassResult.MethodResult(str);
+                        if (Perems.Operation == ButtonNames.Button1DevideX || Perems.Operation == ButtonNames.ButtonProcent)
+                        {
+                            TextResult.Text = EnterResult;
+                            TextOperation.Text = ChoiseOperation.ChoiseMethod();
+                        }
+                        else
+                        {
+
+                            Perems.Number2 = TextResult.Text;
+                            Perems.FlagOperComp = true;
+                            TextOperation.Text = ChoiseOperation.ChoiseMethod();
+                            TextResult.Clear();
+                        }
                     }
                     else
                     {
-
-                        Perems.Number2 = TextResult.Text;
-                        Perems.FlagOperComp = true;
+                        Perems.Number1 = EnterResult;
                         TextOperation.Text = ChoiseOperation.ChoiseMethod();
                         TextResult.Clear();
                     }
+
                 }
-                else
+                else if (Perems.Number1 == null)
                 {
-                    Perems.Number1 = EnterResult;
+                    Perems.FlagOper = true;
+                    Button? operation = sender as Button;
+                    Perems.Operation = operation.Content.ToString();
+                    if (ButtonNames.EqualsOperations())
+                    {
+                        Perems.Number1 = TextResult.Text;
+                        string str = TextResult.Text;
+                        string EnterResult = ClassResult.MethodResult(str);
+                        TextResult.Text = EnterResult;
+
+
+                    }
+                    else
+                    {
+                        Perems.Number1 = TextResult.Text;
+                        TextResult.Clear();
+                    }
                     TextOperation.Text = ChoiseOperation.ChoiseMethod();
-                    TextResult.Clear();
+
                 }
-                
             }
-            else if (Perems.Number1 == null)
+            catch (Exception ex)
             {
-                Perems.FlagOper = true;
-                Button? operation = sender as Button;
-                Perems.Operation = operation.Content.ToString();
-                if (ButtonNames.EqualsOperations())
-                {
-                    Perems.Number1 = TextResult.Text;
-                    string str = TextResult.Text;
-                    string EnterResult = ClassResult.MethodResult(str);
-                    TextResult.Text = EnterResult;
-
-
-                }
-                else
-                {
-                    Perems.Number1 = TextResult.Text;
-                    TextResult.Clear();
-                }
-                TextOperation.Text = ChoiseOperation.ChoiseMethod();
-
+                MessageBox.Show(ex.Message);
             }
         
         }
 
         private void Result_Click(object sender, RoutedEventArgs e)
         {
+            try { 
             if (Perems.Number1 != null && Perems.Number2 != null && Perems.FlagOperComp)
             {
                 ComplexOperation(sender);
@@ -140,6 +154,11 @@ namespace WpfApp2
                 TextOperation.Text = ChoiseOperation.ChoiseMethod();
             }
             Perems.DropPerem();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void C_Click(object sender, RoutedEventArgs e)
