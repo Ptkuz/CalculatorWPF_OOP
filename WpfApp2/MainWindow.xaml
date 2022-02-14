@@ -257,7 +257,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <TextBox x:Name="TextResult" x:FieldModifier="public" HorizontalAlignment="Center" Margin="0,55,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="214" Height="45" FontSize="37" Background="#FF00E2FF" BorderBrush="#FF00E2FF" SelectionBrush="#FF00E2FF" SelectionTextBrush="#FF00E2FF" >
+        <TextBox x:Name="TextResult" IsReadOnly="True" x:FieldModifier="public" HorizontalAlignment="Center" Margin="0,55,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="214" Height="45" FontSize="37" Background="#FF00E2FF" BorderBrush="#FF00E2FF" SelectionBrush="#FF00E2FF" SelectionTextBrush="#FF00E2FF" >
             <TextBox.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
@@ -265,7 +265,7 @@
                 </LinearGradientBrush>
             </TextBox.Foreground>
         </TextBox>
-        <TextBox x:Name="TextOperation" x:FieldModifier="public" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Height="45" FontSize="25" BorderBrush="Black" BorderThickness="0,0,0,0">
+        <TextBox x:Name="TextOperation" IsReadOnly="True" x:FieldModifier="public" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="214" Height="45" FontSize="25" BorderBrush="Black" BorderThickness="0,0,0,0">
             <TextBox.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF93F3FF" Offset="0.01"/>
